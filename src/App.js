@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Movies from "./components/MovieList.jsx"
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
@@ -28,10 +27,6 @@ function App() {
             <Route path="/series" element={<Series />}/>
             <Route path="/favorite" element={<Favorite />}/>
           </Routes>
-          <div className='toto'>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, nihil? Voluptate, modi ipsum? Ullam similique velit ducimus aliquid alias ipsa sequi minima, dolorum est non nam! Incidunt velit quo id?</p>
-          </div>
-          <Movies />
       </div>
     </BrowserRouter>
   );

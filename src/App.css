@@ -47,14 +47,7 @@ nav ul li:hover{
   border: 2px solid #282c34;
 }
 
-
-.toto{
-  position: relative;
-  left: 30vw;
-  width: 20vw;
-  background-color: #282c34;
-  overflow-x: scroll;
-}
-.toto p{
-  width: 60vw;
+.content{
+  position: absolute;
+  left:15vw;
 }
