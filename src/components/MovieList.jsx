@@ -9,10 +9,11 @@ const MoviesList =() =>{
 const [movies, setMovies] = useState([]);
 
 useEffect(() => {
-    fetch( 'https://api.themoviedb.org/3/movie/popular?api_key=f9ac7a805563a418711063c76bd10794&page=1' )
+
+    fetch( 'https://api.themoviedb.org/3/trending/all/day?api_key=f9ac7a805563a418711063c76bd10794&page=1&' )
     .then( response => response.json() )
     .then( result => setMovies( result.results ) )
-})
+},[])
 const listStyle = {
     width: "80vw",
     display:"flex",
@@ -45,7 +46,6 @@ const MovieList = ({movie}) => {
         backgroundRepeat: 'no-repeat',
     }
 
-    // console.log(movie)
     return(
         <div style ={posterStyle}>
         </div>
