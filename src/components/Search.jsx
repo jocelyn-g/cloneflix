@@ -1,7 +1,4 @@
-import React from "react";
-
-
-const { Fragment, useState, useEffect } = React;
+import { Fragment, useState, useEffect } from "react";
 
 
 const SearchMovies = () => {
@@ -46,6 +43,7 @@ useEffect( () => {
         </Fragment>
         )
     }
+    
     const Movie = ( { movie } ) => {
             
         let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/original' + movie.poster_path : 'default-movie-poster.png';
