@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import './components/Search';
 import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
 import Favorite from './views/Favorite';
 import Presentation from './components/Presentation';
+import SearchMovies from './views/SearchView';
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
           <Presentation/>
           <Routes>
               <Route path="/" element={<Home />}/>
+              <Route path="/search" element={<SearchMovies />}/>
               <Route path="/movies" element={<Movies />}/>
               <Route path="/series" element={<Series />}/>
               <Route path="/favorite" element={<Favorite />}/>
