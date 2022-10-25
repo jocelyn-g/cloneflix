@@ -1,5 +1,4 @@
 import React from "react"
-import { findRenderedDOMComponentWithTag } from "react-dom/test-utils";
 const { Fragment, useState, useEffect } = React
 
 
@@ -12,7 +11,7 @@ useEffect(() => {
     fetch( 'https://api.themoviedb.org/3/movie/popular?api_key=f9ac7a805563a418711063c76bd10794&page=1' )
     .then( response => response.json() )
     .then( result => setMovies( result.results ) )
-})
+},[])
 const listStyle = {
     width: "80vw",
     display:"flex",
