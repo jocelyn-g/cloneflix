@@ -34,7 +34,6 @@ const fakeStyle ={
 if(isLoading){
     return (<h1 style={fakeStyle}>Loading...</h1>)
 }else{
-    console.log(movies)
     return(
                     <Fragment>
                     <h1>{requete.genre}</h1>
