@@ -63,9 +63,15 @@ const listStyle = {
     position:'relative',
     overflowX: 'scroll'
 }
+
+const fakeStyle ={
+    width: '100px',
+    height:'150px',
+    backgroundColor: "grey",
+    fontSize: "16px"
+}
 if(isLoading){
-    console.log('loading')
-    return (<h1>Loading...</h1>)
+    return (<h1 style={fakeStyle}>Loading...</h1>)
 }else{
     console.log(movies)
     return(
