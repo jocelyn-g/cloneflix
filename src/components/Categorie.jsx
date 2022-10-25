@@ -29,7 +29,10 @@ return(
 }
 
 
-const genreList = () => {
+const genreList = ({moviesGenres}) => {
     
+    return(
+        <li>{moviesGenres}</li>
+    )
 }
 export default GenresList
