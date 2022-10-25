@@ -37,7 +37,7 @@ if(isLoading){
     console.log(movies)
     return(
                     <Fragment>
-                    <h1>{}</h1>
+                    <h1>{requete.genre}</h1>
                     <div style = {listStyle}>
                         <div style = { { display:'flex' } }>
                         { movies.map( (movie) => <MovieList key={movie.id} movie={movie} /> ) }
