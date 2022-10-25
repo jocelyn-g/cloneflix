@@ -24,7 +24,7 @@ let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/original'
 console.log(presentation)
 
     return (
-        <div style={{width: "90vw",height:'21vh', backgroundImage: 'url('+posterUrl+')', color:'white', padding:'0', margin:'0'}}>
+        <div style={{width: "90vw",height:'25vh', backgroundImage: 'url('+posterUrl+')', color:'white', padding:'0', margin:'0'}}>
             <h1 style={{ padding:'10px', margin:'0'}}>{presentation.title}</h1>
             {presentation.length === undefined &&(<ul>{presentation.genres.map((genre) => <li key={genre.id}>{genre.name}</li> )}</ul>)}
         </div>
