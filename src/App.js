@@ -5,7 +5,7 @@ import Home from './views/Home';
 import Movies from './views/Movies';
 import Series from './views/Series';
 import Favorite from './views/Favorite';
-import SearchMovies from '/views/SearchView';
+import SearchMovies from './views/SearchView';
 
 function App() {
   return (

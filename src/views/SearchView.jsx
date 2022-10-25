@@ -1,7 +1,9 @@
 import React from "react";
 import SearchMovies from "../components/Search.jsx";
 
-const SearchMovies = () => {
+const { Fragment} = React;
+
+const Search = () => {
     return (
         <Fragment>
             <h1>Search</h1>
@@ -10,4 +12,4 @@ const SearchMovies = () => {
     )
 }
 
-export default SearchMovies
+export default Search
