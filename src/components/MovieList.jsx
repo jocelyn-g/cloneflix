@@ -44,9 +44,11 @@ const movieId = {
     37:{id: 37, name: 'Western'}
 }
 const [movies, setMovies] = useState([]);
-const [genres, setGenres] = useState([]);
-useEffect(() => {
+ function Setgenre(genreid){
 
+ }
+    const genre = Setgenre(requete.genre);
+useEffect(() => {
 
     fetch( requete.requete )
     .then( response => response.json() )
