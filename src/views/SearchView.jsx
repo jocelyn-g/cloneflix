@@ -1,12 +1,12 @@
 import React from "react";
-import SearchMovies from "../components/Search";
+import SearchMovies from "../components/Search.jsx";
 
 const SearchMovies = () => {
     return (
-        <Fragfment>
+        <Fragment>
             <h1>Search</h1>
             <SearchMovies />
-        </Fragfment>
+        </Fragment>
     )
 }
 
