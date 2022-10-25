@@ -4,13 +4,12 @@ const { Fragment, useState, useEffect } = React
 
 
 
-const MoviesList =() =>{
+const MoviesList =({requete}) =>{
 
 const [movies, setMovies] = useState([]);
-
 useEffect(() => {
 
-    fetch( 'https://api.themoviedb.org/3/trending/all/day?api_key=f9ac7a805563a418711063c76bd10794&page=1&' )
+    fetch( requete.requete )
     .then( response => response.json() )
     .then( result => setMovies( result.results ) )
 },[])
