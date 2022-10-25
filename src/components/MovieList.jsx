@@ -44,22 +44,30 @@ const movieId = {
     37:{id: 37, name: 'Western'}
 }
 const [movies, setMovies] = useState([]);
- function Setgenre(genreid){
-
- }
-    const genre = Setgenre(requete.genre);
+const [isLoading,setLoad]=useState(true);
 useEffect(() => {
+    const fetchData = async () => {
+        await fetch( requete.requete )
+        .then( response => response.json() )
+        .then( result => setMovies( result.results ) )
+        setLoad(false)
+      }
 
-    fetch( requete.requete )
-    .then( response => response.json() )
-    .then( result => setMovies( result.results ) )
+    fetchData()
+    
 },[])
+
 const listStyle = {
     width: "80vw",
     display:"flex",
     position:'relative',
     overflowX: 'scroll'
 }
+if(isLoading){
+    console.log('loading')
+    return (<h1>Loading...</h1>)
+}else{
+    console.log(movies)
     return(
                     <Fragment>
                     <h1>{}</h1>
@@ -70,6 +78,8 @@ const listStyle = {
                     </div>
                     </Fragment>
     )
+}
+    
 }
 
 const MovieList = ({movie}) => {
