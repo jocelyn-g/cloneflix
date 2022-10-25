@@ -23,7 +23,7 @@ useEffect( () => {
                 
     if( search.length > 0 )
         {
-            fetch( 'https://api.themoviedb.org/3/search/movie?api_key=f9ac7a805563a418711063c76bd10794&language=fr&page=1'+search )
+            fetch( 'https://api.themoviedb.org/3/search/movie?api_key=f9ac7a805563a418711063c76bd10794&language=fr&page=1'+ search )
             .then( response => response.json() )
             .then( result => setMovies( result.results ) )
         }
