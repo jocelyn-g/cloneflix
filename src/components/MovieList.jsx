@@ -52,7 +52,7 @@ if(isLoading){
                     <h1>{requete.genre}</h1>
                     <div style = {listStyle}>
                         <div style = { { display:'flex' } }>
-                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} funct={sendToHome} /> ) }
+                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} type={requete.type} funct={sendToHome} /> ) }
                         </div>
                     </div>
                     </Fragment>
@@ -61,7 +61,7 @@ if(isLoading){
 
 }
 
-const MovieList = ({movie, funct}) => {
+const MovieList = ({movie, funct, type}) => {
 
     let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : 'default-movie-poster.png';
     const posterStyle = {
@@ -72,7 +72,8 @@ const MovieList = ({movie, funct}) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }
-    
+    movie.type = type
+    console.log(movie.type)
     const handleClick = (movie) => funct(movie)
     
     return(
