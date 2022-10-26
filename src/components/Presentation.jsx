@@ -5,12 +5,14 @@ const Presentation = ({movieToPresent}) => {
     
     
     const [presentation, setPresentation] = useState([]);
-    const [presentId, setPrentId] = useState("436270")
+    const [format, setFormat] = useState("movie")
     const id = movieToPresent
+
+
 
 useEffect(() => {
     const fetchData = async () => {
-        fetch( 'https://api.themoviedb.org/3/movie/'+id+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US' )
+        fetch( 'https://api.themoviedb.org/3/'+format+'/'+id+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US' )
         .then( response => response.json() )
         .then( result => setPresentation( result ) )
     }

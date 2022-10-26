@@ -74,7 +74,8 @@ const MovieList = ({movie, funct}) => {
         backgroundRepeat: 'no-repeat',
     }
     
-    const handleClick = (movie) => funct(movie)
+    const handleClick = (movie) => {funct(movie)}
+    // console.log(movie)
     
     return(
         <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) } >
