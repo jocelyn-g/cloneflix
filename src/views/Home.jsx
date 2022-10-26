@@ -13,7 +13,7 @@ const Home = () => {
         <div className="content">
             <h1>Accueil</h1>
             <MoviesList requete={{handlePresentationChange:{setPresentation}, genre:'Populaire', requete:'https://api.themoviedb.org/3/trending/all/day?api_key=f9ac7a805563a418711063c76bd10794&page=1&'}}/>
-            <GenresList />
+            <GenresList handlePresentationChange3={setPresentation}/>
         </div>
         </div>
     )

@@ -2,7 +2,7 @@ import {useState, useEffect } from "react"
 import MoviesList from "./MovieList";
 
 
-const GenresList = () =>{
+const GenresList = ({handlePresentationChange3}) =>{
 const [moviesGenres, setMoviesGenres] = useState([]);
 const [tvsGenres, setTvsGenres] = useState([]);
 const [isLoading,setLoad]=useState(true);
@@ -22,6 +22,8 @@ useEffect(() => {
     fetchMovieGenre()
     fetchTvsGenre()
 },[])
+const sendToHome = (movie) => handlePresentationChange3(movie)
+// console.log(handlePresentationChange3)
 if(isLoading){
     return(
         <div>
@@ -31,16 +33,20 @@ if(isLoading){
 }else{
 return(
     <div>
-        {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
-        {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
+        {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
+        {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
     </div>
 )
 }
 
 }
-const GenreList = ({type,genre,id}) => {
+const GenreList = ({type,genre,id, handlePresentationChange2}) => {
+    
+    const setPresentation = (movie) => handlePresentationChange2(movie)
+    
+     console.log(handlePresentationChange2)
     return(
-        <MoviesList requete={{genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
+        <MoviesList requete={{handlePresentationChange:{setPresentation}, genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
 
     )
 
