@@ -43,20 +43,20 @@ if(isLoading){
             loading...
         </div>
     )
-}else if(type.type == "all"){
+}else if(type.type === "all"){
 return(
     <div>
         {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
         {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
     </div>
 )
-}else if(type.type == "movie"){
+}else if(type.type === "movie"){
     return(
         <div>
             {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
         </div>
     )
-}else if(type.type == "tv"){
+}else if(type.type === "tv"){
     return(
         <div>
             {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
