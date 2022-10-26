@@ -39,7 +39,6 @@ return(
 
 }
 const GenreList = ({type,genre,id}) => {
-    console.log(genre)
     return(
         <MoviesList requete={{genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
 
