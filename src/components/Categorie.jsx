@@ -31,8 +31,8 @@ if(isLoading){
 }else{
 return(
     <div>
-        {moviesGenres.genres.slice(0,3).map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
-        {tvsGenres.genres.slice(0,3).map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
+        {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
+        {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
     </div>
 )
 }
