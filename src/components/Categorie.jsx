@@ -25,20 +25,18 @@ useEffect(() => {
 if(isLoading){
 
 }else{
-console.log(moviesGenres.genres)
 return(
     <div>
-        {moviesGenres.genres.map((genre, i) => <GenreList key={i} id={genre.id} genre={genre.name}/>)}
+        {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
+        {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
     </div>
 )
 }
 
 }
-const GenreList = ({genre,id}) => {
+const GenreList = (props) => {
     return(
-        <div>
-            
-        </div>
+        console.log(props)
     )
 }
 export default GenresList
