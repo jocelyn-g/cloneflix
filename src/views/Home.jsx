@@ -5,7 +5,7 @@ import Presentation from "../components/Presentation.jsx"
 const Home = () => {
     const [recupId, setRecupid] = useState("436270")
 
-    const setPresentation = (movie) => {setRecupid(movie.id)}
+    const setPresentation = (movie) => {setRecupid(movie)}
     console.log(recupId)
     return (
         <div className="home">

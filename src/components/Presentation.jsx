@@ -8,13 +8,7 @@ const Presentation = ({movieToPresent}) => {
     const id = movieToPresent
 
 useEffect(() => {
-    const fetchData = async () => {
-        fetch( 'https://api.themoviedb.org/3/movie/'+movieToPresent+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US' )
-        .then( response => response.json() )
-        .then( result => setPresentation( result ) )
-    }
-    
-    fetchData()
+    setPresentation(id)
 },[id])
 
 let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/original' + presentation.poster_path : 'default-movie-poster.png';
