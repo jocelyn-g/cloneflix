@@ -16,7 +16,6 @@ useEffect(() => {
     fetchData()
 
 },[])
-
 const listStyle = {
     width: "80vw",
     display:"flex",
@@ -78,9 +77,8 @@ const MovieList = ({movie, funct}) => {
     // console.log(movie)
     
     return(
-        <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) } >
+        <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>
-
     )
 }
 

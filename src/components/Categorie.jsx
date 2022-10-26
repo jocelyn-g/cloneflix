@@ -45,20 +45,20 @@ if(isLoading){
             loading...
         </div>
     )
-}else if(type.type == "all"){
+}else if(type.type === "all"){
 return(
     <div>
         {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
         {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
     </div>
 )
-}else if(type.type == "movie"){
+}else if(type.type === "movie"){
     return(
         <div>
             {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
         </div>
     )
-}else if(type.type == "tv"){
+}else if(type.type === "tv"){
     return(
         <div>
             {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
@@ -71,7 +71,6 @@ const GenreList = ({type,genre,id, handlePresentationChange2}) => {
     
     const setPresentation = (movie) => handlePresentationChange2(movie)
     
-    // console.log(type)
     return(
         <MoviesList requete={{handlePresentationChange:{setPresentation}, genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
 
