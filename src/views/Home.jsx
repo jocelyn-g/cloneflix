@@ -4,11 +4,8 @@ import GenresList from "../components/Categorie.jsx"
 import Presentation from "../components/Presentation.jsx"
 
 
-const movie = []
-console.log(movie == false)
 const Home = () => {
     const [recupId, setRecupid] = useState("436270")
-
     const setPresentation = (movie) => {setRecupid(movie.id)}
     console.log(recupId)
     return (
