@@ -1,5 +1,4 @@
-import React from "react"
-const { Fragment, useState, useEffect } = React
+import {Fragment, useState, useEffect } from "react"
 
 const Presentation = ({movieToPresent}) => {
     
@@ -35,9 +34,5 @@ if(presentation.length === 0){
     )
 }
 }
-
-
-
-
 
 export default Presentation

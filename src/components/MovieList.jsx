@@ -16,7 +16,7 @@ useEffect(() => {
       }
 
     fetchData()
-    
+
 },[])
 
 const listStyle = {
@@ -60,7 +60,7 @@ if(isLoading){
                     </Fragment>
     )
 }
-    
+
 }
 
 const MovieList = ({movie, funct}) => {
@@ -79,6 +79,7 @@ const MovieList = ({movie, funct}) => {
     // console.log(movie)
     
     const handleClick = (movie) => funct(movie)
+    
     return(
         <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) } >
         </div>
