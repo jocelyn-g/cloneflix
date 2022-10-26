@@ -50,6 +50,9 @@ nav ul li:hover{
   border: 2px solid #282c34;
 }
 
+.home{
+  width: 89.9vw;
+}
 .content{
   height: 60vh;
   overflow: scroll;

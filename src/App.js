@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import './components/Search';
 import Navigation from './components/Navigation';
 
 function App() {
+  
   return (
     <BrowserRouter>
       <div className="App">
@@ -21,7 +22,7 @@ function App() {
             </ul>
           </nav>
           <div>
-          <Navigation/>
+            <Navigation/>
           </div>
         </div>
 
