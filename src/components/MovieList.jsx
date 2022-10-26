@@ -46,11 +46,9 @@ if(isLoading){
                             Loading...
                             </div>
                         </div>
-                    </Fragment>)
+                    </Fragment>
+                    )
 }else{
-
-    // console.log(movies)
-
     return(
                     <Fragment>
                     <h1>{requete.genre}</h1>
