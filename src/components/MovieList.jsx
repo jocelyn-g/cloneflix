@@ -1,13 +1,13 @@
-import React from "react"
-const { Fragment, useState, useEffect } = React
+import { Fragment, useState, useEffect } from "react";
 
 
-
-
-const MoviesList =({requete}) =>{
+const MoviesList =({requete}) => {
 const [movies, setMovies] = useState([]);
 const [isLoading,setLoad]=useState(true);
+
+
 useEffect(() => {
+    
     const fetchData = async () => {
         await fetch( requete.requete )
         .then( response => response.json() )
@@ -17,7 +17,8 @@ useEffect(() => {
 
     fetchData()
 
-},[])
+}, [] )
+
 
 const listStyle = {
     width: "80vw",
@@ -26,7 +27,7 @@ const listStyle = {
     overflowX: 'scroll'
 }
 
-const fakeStyle ={
+const fakeStyle = {
     width: "80vw",
     height: "20vh",
     display:"flex",
@@ -37,29 +38,35 @@ const fakeStyle ={
 }
 
 const sendToHome = (movie) => requete.handlePresentationChange.setPresentation(movie)
-if(isLoading){
-    return (
-                    <Fragment>
-                        <h1>{requete.genre}</h1>
-                        <div style = {fakeStyle}>
-                            <div style = { { display:'flex' } }>
-                            Loading...
-                            </div>
-                        </div>
-                    </Fragment>)
-}else{
-    // console.log(movies)
-    return(
-                    <Fragment>
+
+    if(isLoading) 
+    {
+    
+        return (
+                <Fragment>
                     <h1>{requete.genre}</h1>
-                    <div style = {listStyle}>
+                    <div style = {fakeStyle}>
                         <div style = { { display:'flex' } }>
-                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} funct={sendToHome} /> ) }
+                        Loading...
                         </div>
                     </div>
-                    </Fragment>
-    )
-}
+                </Fragment>)
+    }
+else 
+    {
+
+        // console.log(movies)
+        return(
+                        <Fragment>
+                        <h1>{requete.genre}</h1>
+                        <div style = {listStyle}>
+                            <div style = { { display:'flex' } }>
+                            { movies.map( (movie) => <MovieList key={movie.id} movie={movie} funct={sendToHome} /> ) }
+                            </div>
+                        </div>
+                        </Fragment>
+        )
+    }
 
 }
 

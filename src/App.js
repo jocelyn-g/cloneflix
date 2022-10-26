@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import './components/Search';
+import './components/Row';
 import Navigation from './components/Navigation';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
             <ul>
               <a href="/search"><li>Search</li></a>
               <a href="/"><li>Home</li></a>
-              <a href="/movies"><li>Movies</li></a>
+              <a href="/Movies"><li>Movies</li></a>
               <a href="/series"><li>Series</li></a>
               <a href="/favorite"><li>Favorite</li></a>
             </ul>
