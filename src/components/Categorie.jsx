@@ -31,15 +31,14 @@ if(isLoading){
 }else{
 return(
     <div>
-        {moviesGenres.genres.slice(0,3).map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
-        {tvsGenres.genres.slice(0,3).map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
+        {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
+        {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
     </div>
 )
 }
 
 }
 const GenreList = ({type,genre,id}) => {
-    console.log(genre)
     return(
         <MoviesList requete={{genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
 

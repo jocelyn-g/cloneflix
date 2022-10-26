@@ -2,8 +2,6 @@ import React from "react"
 const { Fragment, useState, useEffect } = React
 
 
-
-
 const MoviesList =({requete}) =>{
 const [movies, setMovies] = useState([]);
 const [isLoading,setLoad]=useState(true);
@@ -65,8 +63,7 @@ if(isLoading){
 
 const MovieList = ({movie, funct}) => {
 
-    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/original' + movie.poster_path : 'default-movie-poster.png';
-    // console.log(movie.id)
+    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w154' + movie.poster_path : 'default-movie-poster.png';
     const posterStyle = {
         width: '100px',
         height:'150px',
@@ -75,8 +72,6 @@ const MovieList = ({movie, funct}) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }
-
-    // console.log(movie)
     
     const handleClick = (movie) => funct(movie)
     
