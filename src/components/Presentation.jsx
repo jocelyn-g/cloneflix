@@ -19,7 +19,7 @@ useEffect(() => {
 },[id])
 
 let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/original' + presentation.poster_path : 'default-movie-poster.png';
- console.log(presentation)
+//  console.log(presentation)
 if(presentation.length === 0){
     return (
         <Fragment>

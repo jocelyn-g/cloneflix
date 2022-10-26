@@ -11,7 +11,7 @@ useEffect(() => {
     const fetchData = async () => {
         await fetch( requete.requete )
         .then( response => response.json() )
-        .then( result => setMovies( result.results ) )
+        .then( result => setMovies( result.results.slice(0,15) ) )
         setLoad(false)
       }
 
@@ -46,9 +46,9 @@ if(isLoading){
                             Loading...
                             </div>
                         </div>
-                    </Fragment>)
+                    </Fragment>
+                    )
 }else{
-    // console.log(movies)
     return(
                     <Fragment>
                     <h1>{requete.genre}</h1>
