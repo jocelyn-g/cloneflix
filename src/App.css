@@ -28,12 +28,14 @@ nav{
   top: 15vh;
   list-style: none;
 }
+
 nav ul{
   list-style: none;
   padding: 0px;
   margin: 0%;
   width: 100%;
 }
+
 nav ul li{
   background-color: #282c34;
   padding-top: 10px;
@@ -41,10 +43,12 @@ nav ul li{
   margin: 0%;
   width: 10vw;
 }
+
 nav ul a{
   color: white;
   list-style: none;
 }
+
 nav ul li:hover{
   background-color: rgba(255, 0, 0, 0.541);
   border: 2px solid #282c34;
