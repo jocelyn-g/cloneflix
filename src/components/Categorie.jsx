@@ -55,13 +55,13 @@ return(
 }else if(type.type === "movie"){
     return(
         <div>
-            {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name}/>)}
+            {moviesGenres.genres.map((genre, i) => <GenreList key={i} type="movie" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
         </div>
     )
 }else if(type.type === "tv"){
     return(
         <div>
-            {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name}/>)}
+            {tvsGenres.genres.map((genre, i) => <GenreList key={i} type="tv" id={genre.id} genre={genre.name} handlePresentationChange2={sendToHome}/>)}
         </div>
         )   
         }
