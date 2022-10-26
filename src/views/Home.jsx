@@ -7,14 +7,14 @@ import Presentation from "../components/Presentation.jsx"
 const Home = () => {
     const [recupId, setRecupid] = useState("436270")
     const setPresentation = (movie) => {setRecupid(movie.id)}
-    console.log(recupId)
+    // console.log(recupId)
     return (
         <div className="home">
         <Presentation movieToPresent={recupId}/>
         <div className="content">
             <h1>Accueil</h1>
             <MoviesList requete={{handlePresentationChange:{setPresentation}, genre:'Populaire', requete:'https://api.themoviedb.org/3/trending/all/day?api_key=f9ac7a805563a418711063c76bd10794&page=1&'}}/>
-            <GenresList />
+            <GenresList load={{type:"all"}}/>
         </div>
         </div>
     )
