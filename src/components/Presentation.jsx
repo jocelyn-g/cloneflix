@@ -16,7 +16,7 @@ useEffect(() => {
     fetchData()
 },[id])
 
-let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/original' + presentation.poster_path : 'default-movie-poster.png';
+let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/w154' + presentation.poster_path : 'default-movie-poster.png';
 //  console.log(presentation)
 if(presentation.length === 0){
     return (

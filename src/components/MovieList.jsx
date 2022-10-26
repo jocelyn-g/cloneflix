@@ -65,7 +65,7 @@ if(isLoading){
 
 const MovieList = ({movie, funct}) => {
 
-    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/original' + movie.poster_path : 'default-movie-poster.png';
+    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w154' + movie.poster_path : 'default-movie-poster.png';
     // console.log(movie.id)
     const posterStyle = {
         width: '100px',
