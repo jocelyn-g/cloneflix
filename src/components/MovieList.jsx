@@ -2,12 +2,13 @@ import { Fragment, useState, useEffect } from "react"
 
 
 
-const MoviesList =({requete}) =>{
+const MoviesList =({requete}) => {
     
     const [movies, setMovies] = useState([]);
     const [isLoading,setIsLoading]=useState(true);
     
     const fetchData = async () => {
+        
         await fetch( requete.requete )
         .then( response => response.json() )
         .then( result => setMovies( result.results ) )
@@ -15,45 +16,44 @@ const MoviesList =({requete}) =>{
         
       }
 
-useEffect(() => {
+    useEffect(() => {
 
-    fetchData() 
+        fetchData() 
 
-},[isLoading])
+    }, [])
 
-const listStyle = {
-    width: "80vw",
-    display:"flex",
-    position:'relative',
-    overflowX: 'scroll'
-}
+    const listStyle = {
+        width: "80vw",
+        display:"flex",
+        position:'relative',
+        overflowX: 'scroll'
+    }
 
-const fakeStyle ={
-    width: '100px',
-    height:'150px',
-    backgroundColor: "grey",
-    fontSize: "16px"
-}
-if(isLoading) {
+    const fakeStyle ={
+        width: '100px',
+        height:'150px',
+        backgroundColor: "grey",
+        fontSize: "16px"
+    }
 
-    return (<h1 style={fakeStyle}>Loading...</h1>)
-}
+    if(isLoading) 
+        {
+            return (<h1 style={fakeStyle}>Loading...</h1>)
+        }
 
-else {
-    console.log(movies)
-    
-    return(
-                <Fragment>
-                    <h1>{requete.genre}</h1>
-                    <div style = {listStyle}>
-                        <div style = { { display:'flex' } }>
-                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} /> ) }
+    else 
+        {
+           return (
+                    <Fragment>
+                        <h1>{requete.genre}</h1>
+                        <div style = {listStyle}>
+                            <div style = { { display:'flex' } }>
+                            { movies.map( (movie) => <MovieList key={movie.id} movie={movie} /> ) }
+                            </div>
                         </div>
-                    </div>
-                </Fragment>
-    )
-}
-    
+                    </Fragment>
+            )
+        }    
 }
 
 const MovieList = ({movie}) => {
@@ -69,7 +69,7 @@ const MovieList = ({movie}) => {
         backgroundRepeat: 'no-repeat',
     }
 
-    return(
+    return (
         <div style ={posterStyle}>
         </div>
 
