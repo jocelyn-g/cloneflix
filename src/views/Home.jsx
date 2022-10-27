@@ -3,9 +3,9 @@ import MoviesList from "../components/MovieList.jsx"
 import GenresList from "../components/Categorie.jsx"
 import Presentation from "../components/Presentation.jsx"
 
-
 const Home = () => {
-    const [recupId, setRecupid] = useState({adult: false,
+    const [recupId, setRecupid] = useState(
+        {adult: false,
         backdrop_path: "/qxeqKcVBWnQxUp1w6fwWcxZEA6m.jpg",
         genre_ids:[28, 12, 14],
         id: 436270,
@@ -20,7 +20,8 @@ const Home = () => {
         type: 'movie',
         video: false,
         vote_average: 7.2,
-        vote_count: 471})
+        vote_count: 471
+    })
     const setPresentation = (movie) => {
         if(movie.type !== undefined){
             movie.media_type = movie.type

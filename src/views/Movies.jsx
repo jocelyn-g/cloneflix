@@ -17,7 +17,8 @@ const Movies = () => {
         title: "Black Adam",
         video: false,
         vote_average: 7.2,
-        vote_count: 471})
+        vote_count: 471
+    })
         const setPresentation = (movie) => {
             if(movie.type !== undefined){
                 movie.media_type = movie.type

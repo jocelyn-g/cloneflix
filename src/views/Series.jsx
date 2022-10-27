@@ -3,7 +3,8 @@ import GenresList from "../components/Categorie.jsx"
 import Presentation from "../components/Presentation.jsx"
 
 const Series = () => {
-    const [recupId, setRecupid] = useState({adult: false,
+    const [recupId, setRecupid] = useState({
+        adult: false,
         backdrop_path: "/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",
         genre_ids: [10765, 18, 10759],
         id: 94997,
@@ -16,7 +17,8 @@ const Series = () => {
         release_date: "2022-10-19",
         video: false,
         vote_average: 8.534,
-        vote_count: 2095})
+        vote_count: 2095
+    })
 
         const setPresentation = (movie) => {
             if(movie.type !== undefined){

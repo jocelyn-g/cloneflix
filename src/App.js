@@ -14,8 +14,8 @@ function App() {
         <div className='main'>
           <nav>
             <ul>
-              <a href="/search"><li>Search</li></a>
               <a href="/"><li>Home</li></a>
+              <a href="/search"><li>Search</li></a>
               <a href="/movies"><li>Movies</li></a>
               <a href="/series"><li>Series</li></a>
               <a href="/favorite"><li>Favorite</li></a>
