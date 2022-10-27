@@ -93,3 +93,18 @@ nav ul li:hover{
 h1{
   color: white;
 }
+
+.posterStyle:hover{
+  transform: scale(1.2);
+}
+
+.addFav:focus{
+  background-color: red;
+  border: none;
+}
+.addFav{
+  background-color: #282c34;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+}

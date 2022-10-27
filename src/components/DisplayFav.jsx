@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-const DisplayFavs = () => {
+const DisplayFavs = ({requete}) => {
     
     const [favs,setFavs] = useState()
     const [isLoading,setLoad]=useState(true);
@@ -18,7 +18,9 @@ const DisplayFavs = () => {
         fetchData()
         
     }, [])
-
+    const sendToHome = (movie) => {
+        requete.handlePresentationChange.setPresentation(movie)
+    }
     if(isLoading){
         <div style={{width: "89.9vw",height:'25vh', backgroundColor: "rgba(80, 80, 80, 0.5)", color:'white', padding:'0', margin:'0'}}>
             Loading...
@@ -26,14 +28,14 @@ const DisplayFavs = () => {
     }else{
     return(
         <div style = { { display:'flex', wordWrap: 'break-word' } }>
-            { favs.map( (movie) => <DisplayFav key={movie.id} movie={movie}/> ) }
+            { favs.map( (movie) => <DisplayFav key={movie.id} movie={movie} funct={sendToHome}/> ) }
         </div>
     )
     }
 
 }
 
-const DisplayFav = ({movie}) =>{
+const DisplayFav = ({movie, funct, type}) =>{
 
 
     let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : 'default-movie-poster.png';
@@ -45,9 +47,13 @@ const DisplayFav = ({movie}) =>{
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }
+    const handleClick = (movie) => {
+        movie.type = type
+        funct(movie)
+    }
 
     return(
-        <div style ={posterStyle}>
+        <div className="posterStyle" style ={posterStyle}  onClick = {() => handleClick(movie)}>
         </div>
     )
 }
