@@ -18,9 +18,11 @@ useEffect(() => {
 },[])
 const listStyle = {
     width: "80vw",
+    height: "12vw",
     display:"flex",
     position:'relative',
-    overflowX: 'scroll'
+    overflowX: 'scroll',
+
 }
 
 const fakeStyle ={
@@ -52,7 +54,7 @@ if(isLoading){
     return(
                     <Fragment>
                     <h1>{requete.genre}</h1>
-                    <div style = {listStyle}>
+                    <div className="scroll">
                         <div style = { { display:'flex' } }>
                         { movies.map( (movie) => <MovieList key={movie.id} movie={movie} type={requete.type} funct={sendToHome} /> ) }
                         </div>
@@ -81,7 +83,7 @@ const MovieList = ({movie, funct, type}) => {
     }
    // console.log(movie.type)
     return(
-        <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
+        <div className="poster" style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>
     )
 }
