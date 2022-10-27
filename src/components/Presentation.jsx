@@ -17,7 +17,7 @@ useEffect(() => {
     fetchData()
 },[id])
 
-
+//console.log(presentation)
 
 let posterUrl = presentation.poster_path ? 'https://image.tmdb.org/t/p/w154' + presentation.poster_path : 'default-movie-poster.png';
 if(presentation.length === 0){
@@ -29,11 +29,16 @@ if(presentation.length === 0){
         </Fragment>)
 }else{
     return (
-        <div style={{width: "89.9vw",height:'25vh', backgroundImage: 'url('+posterUrl+')', color:'white', padding:'0', margin:'0'}}>
-            <h1 style={{ padding:'10px', margin:'0'}}>{presentation.title ? presentation.title : presentation.original_name}</h1>
-            <p>{presentation && presentation.overview}</p>
-            <ul>{presentation && presentation.genres.map((genre) => <li key={genre.id}>{genre.name}</li> )}</ul>
-            <AddFav movie={movieToPresent}/>
+        <div style={{width: "89.9vw",height:'25vh', backgroundColor: '#525252', color:'white', padding:'0', margin:'0', display: 'flex'}}>
+            <div style={{height: '25vh'}}>
+                <img style={{height: '100%', padding:'0', margin:'0'}} src={posterUrl} alt="" />
+            </div>
+            <div style={{width: "70vw", margin:'auto'}}>
+                <h1 style={{ padding:'10px', margin:'0'}}>{presentation.title ? presentation.title : presentation.original_name}</h1>
+                <p>{presentation && presentation.overview}</p>
+                <ul style={{listStyle: 'none', display:'flex', justifyContent: 'space-evenly'}}>{presentation && presentation.genres.map((genre) => <li key={genre.id}>{genre.name}</li> )}</ul>
+            </div>
+            <div style={{position: 'absolute', top: '17vh', right: '2vw'}}><AddFav movie={movieToPresent}/></div>
         </div>
     )
 }

@@ -15,7 +15,9 @@ const AddFav = ({movie}) =>{
     }
 
     return(
-        <button onClick = {() => addToFav(movie)}>Add to favorite</button>
+        <button onClick = {() => addToFav(movie)} style={{backgroundColor: '#282c34', color: 'white', borderRadius: '30px', padding: '10px'}}>
+            Add to favorite
+        </button>
     )
 }
 
