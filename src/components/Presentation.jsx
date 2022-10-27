@@ -1,5 +1,5 @@
 import React from "react"
-import AddFav from "./addFav";
+import AddFav from "./AddFav";
 const { Fragment, useState, useEffect } = React
 
 const Presentation = ({movieToPresent}) => {
@@ -23,7 +23,8 @@ if(presentation.length === 0){
             <div style={{width: "89.9vw",height:'25vh', backgroundColor: "rgba(80, 80, 80, 0.5)", color:'white', padding:'0', margin:'0'}}>
                 Loading...
             </div>
-        </Fragment>)
+        </Fragment>
+        )
 }else{
     return (
         <div style={{width: "89.9vw",height:'25vh', backgroundImage: 'url('+posterUrl+')', color:'white', padding:'0', margin:'0'}}>

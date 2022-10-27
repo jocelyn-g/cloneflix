@@ -25,10 +25,9 @@ const Series = () => {
             }
             setRecupid(movie)
         }
-    const [formatv, setFormatv] = useState("tv")
     return (
         <div className="home">
-        <Presentation movieToPresent={recupId} format={formatv}/>
+        <Presentation movieToPresent={recupId}/>
             <div className="content">
                 <h1>Séries</h1>
                 <GenresList load={{type:"tv"}} handlePresentationChange3={setPresentation}/>
