@@ -1,11 +1,10 @@
 import React from "react"
-import AddFav from "./addFav";
+import AddFav from "./AddFav";
 const { Fragment, useState, useEffect } = React
 
 const Presentation = ({movieToPresent, formatv}) => {
     
     const [presentation, setPresentation] = useState(false);
-    const [format, setFormat] = useState(movieToPresent.media_type)
     const id = movieToPresent.id
 useEffect(() => {
     
@@ -26,7 +25,8 @@ if(presentation.length === 0){
             <div style={{width: "89.9vw",height:'25vh', backgroundColor: "rgba(80, 80, 80, 0.5)", color:'white', padding:'0', margin:'0'}}>
                 Loading...
             </div>
-        </Fragment>)
+        </Fragment>
+        )
 }else{
     return (
         <div style={{width: "89.9vw",height:'25vh', backgroundColor: '#525252', color:'white', padding:'0', margin:'0', display: 'flex'}}>

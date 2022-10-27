@@ -29,7 +29,7 @@ useEffect( () => {
             const fetchData = async () => {
                 await fetch( requete.requete )
                 .then( response => response.json() )
-                .then( result => setMovies( result.results.slice(0,15) ) )
+                .then( result => setMovies( result.results ) )
                 setLoad(false)
               }
         
