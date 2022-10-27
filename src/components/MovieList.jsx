@@ -33,7 +33,10 @@ const fakeStyle ={
     fontSize: "16px"
 }
 
-const sendToHome = (movie) => requete.handlePresentationChange.setPresentation(movie)
+const sendToHome = (movie) => {
+    // console.log(movie)
+    requete.handlePresentationChange.setPresentation(movie)
+}
 // console.log(requete.handlePresentationChange.setPresentation)
 if(isLoading){
     return (
@@ -72,10 +75,12 @@ const MovieList = ({movie, funct, type}) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }
-    movie.type = type
-    console.log(movie.type)
-    const handleClick = (movie) => funct(movie)
-    
+
+    const handleClick = (movie) => {
+        movie.type = type
+        // console.log(movie)
+        funct(movie)
+    }
     return(
         <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>
