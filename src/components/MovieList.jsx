@@ -38,7 +38,6 @@ const fakeStyle ={
 const sendToHome = (movie) => {
     requete.handlePresentationChange.setPresentation(movie)
 }
-// console.log(requete.handlePresentationChange.setPresentation)
 if(isLoading){
     return (
                     <Fragment>
@@ -81,7 +80,6 @@ const MovieList = ({movie, funct, type}) => {
         movie.type = type
         funct(movie)
     }
-   // console.log(movie.type)
     return(
         <div className="poster" style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>
