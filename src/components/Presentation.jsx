@@ -5,7 +5,6 @@ const { Fragment, useState, useEffect } = React
 const Presentation = ({movieToPresent}) => {
     
     const [presentation, setPresentation] = useState(false);
-    const [format, setFormat] = useState(movieToPresent.media_type)
     const id = movieToPresent.id
 useEffect(() => {
     
