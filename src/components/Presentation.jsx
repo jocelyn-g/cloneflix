@@ -29,7 +29,7 @@ if(presentation.length === 0){
         )
 }else{
     return (
-        <div style={{width: "89.9vw",height:'25vh', backgroundColor: '#525252', color:'white', padding:'0', margin:'0', display: 'flex'}}>
+        <div style={{width: "89.9vw",height:'25vh', background: 'linear-gradient(180deg, rgba(82,82,82,1) 10%, rgba(0,0,0,0.45) 100%)', color:'white', padding:'0', margin:'0', display: 'flex'}}>
             <div style={{height: '25vh'}}>
                 <img style={{height: '100%', padding:'0', margin:'0'}} src={posterUrl} alt="" />
             </div>
