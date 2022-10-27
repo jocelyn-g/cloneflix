@@ -1,4 +1,5 @@
 import React from "react"
+import image from '../img/default-movie-poster.png'
 const { Fragment, useState, useEffect } = React
 
 
@@ -66,7 +67,7 @@ if(isLoading){
 
 const MovieList = ({movie, funct, type}) => {
 
-    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : '../img/default-movie-poster.png';
+    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : image;
     const posterStyle = {
         width: '130px',
         height:'185px',
