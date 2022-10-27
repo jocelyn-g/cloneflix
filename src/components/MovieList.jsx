@@ -38,7 +38,6 @@ const fakeStyle ={
 const sendToHome = (movie) => {
     requete.handlePresentationChange.setPresentation(movie)
 }
-// console.log(requete.handlePresentationChange.setPresentation)
 if(isLoading){
     return (
                     <Fragment>
@@ -67,7 +66,7 @@ if(isLoading){
 
 const MovieList = ({movie, funct, type}) => {
 
-    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : 'default-movie-poster.png';
+    let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : '../img/default-movie-poster.png';
     const posterStyle = {
         width: '130px',
         height:'185px',
@@ -81,7 +80,6 @@ const MovieList = ({movie, funct, type}) => {
         movie.type = type
         funct(movie)
     }
-   // console.log(movie.type)
     return(
         <div className="poster" style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>

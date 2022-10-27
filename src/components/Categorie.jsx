@@ -38,7 +38,6 @@ useEffect(() => {
     fetchMovieGenre(type)
 },[])
 const sendToHome = (movie) => handlePresentationChange3(movie)
-// console.log(handlePresentationChange3)
 if(isLoading){
     return(
         <div>
