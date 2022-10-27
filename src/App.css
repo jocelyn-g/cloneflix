@@ -62,3 +62,7 @@ nav ul li:hover{
   overflow: scroll;
   padding-left: 5vw;
 }
+.content_search{
+  height: 85vh;
+  overflow: scroll;
+}

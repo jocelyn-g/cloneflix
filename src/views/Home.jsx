@@ -20,6 +20,7 @@ const Home = () => {
         vote_average: 7.2,
         vote_count: 471})
     const setPresentation = (movie) => {setRecupid(movie)}
+    console.log(recupId)
     return (
         <div className="home">
         <Presentation movieToPresent={recupId}/>

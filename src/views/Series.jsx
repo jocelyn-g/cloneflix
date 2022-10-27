@@ -1,27 +1,31 @@
-import { Fragment, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 import GenresList from "../components/Categorie.jsx"
 import Presentation from "../components/Presentation.jsx"
 
 const Series = () => {
     const [recupId, setRecupid] = useState({adult: false,
-        backdrop_path: "/qxeqKcVBWnQxUp1w6fwWcxZEA6m.jpg",
-        genre_ids:[28, 12, 14],
-        id: 436270,
+        backdrop_path: "/etj8E2o0Bud0HkONVQPjyCkIvpv.jpg",
+        genre_ids: [10765, 18, 10759],
+        id: 94997,
         original_language: "en",
-        original_title: "Black Adam",
-        overview: "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
-        popularity: 4912.22,
-        poster_path: "/3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg",
+        original_name: "House of the Dragon",
+        overview: "The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.",
+        popularity: 5118.792,
+        poster_path: "/z2yahl2uefxDCl0nogcRBstwruJ.jpg",
         release_date: "2022-10-19",
-        title: "Black Adam",
         video: false,
-        vote_average: 7.2,
-        vote_count: 471})
-    const setPresentation = (movie) => {setRecupid(movie.id)}
-    const [formatv, setFormatv] = useState("tv")
+        vote_average: 8.534,
+        vote_count: 2095})
+
+        const [formatv, setFormatv] = useState("tv")
+    const setPresentation = (movie) => {setRecupid(movie)}
+
+    useEffect(() => {
+        const formatv = () => {setFormatv(formatv)}
+    },[])
     return (
         <div className="home">
-        <Presentation movieToPresent={recupId} format={formatv}/>
+        <Presentation movieToPresent={recupId} formatv={formatv}/>
             <div className="content">
                 <h1>Séries</h1>
                 <GenresList load={{type:"tv"}} handlePresentationChange3={setPresentation}/>

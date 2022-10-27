@@ -5,10 +5,10 @@ const { Fragment} = React;
 
 const Search = () => {
     return (
-        <Fragment>
+        <div className="content_search">
             <h1>Search</h1>
             <SearchMovies />
-        </Fragment>
+        </div>
     )
 }
 

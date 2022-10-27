@@ -44,11 +44,11 @@ useEffect( () => {
     
     const Movie = ( { movie } ) => {
             
-        let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/original' + movie.poster_path : 'default-movie-poster.png';
+        let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'default-movie-poster.png';
         
         const searchMoviesStyle = {
-            width: '400px',
-            height: '550px',
+            width: '200px',
+            height: '300px',
             backgroundImage: 'url('+ posterUrl +')',
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -62,7 +62,7 @@ useEffect( () => {
         }
         
         return (
-
+            
             <article style={searchMoviesStyle}>
                 <main></main>
             </article>
