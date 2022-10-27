@@ -33,7 +33,10 @@ const fakeStyle ={
     fontSize: "16px"
 }
 
-const sendToHome = (movie) => requete.handlePresentationChange.setPresentation(movie)
+const sendToHome = (movie) => {
+    // console.log(movie)
+    requete.handlePresentationChange.setPresentation(movie)
+}
 // console.log(requete.handlePresentationChange.setPresentation)
 if(isLoading){
     return (
@@ -52,7 +55,7 @@ if(isLoading){
                     <h1>{requete.genre}</h1>
                     <div style = {listStyle}>
                         <div style = { { display:'flex' } }>
-                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} funct={sendToHome} /> ) }
+                        { movies.map( (movie) => <MovieList key={movie.id} movie={movie} type={requete.type} funct={sendToHome} /> ) }
                         </div>
                     </div>
                     </Fragment>
@@ -61,7 +64,7 @@ if(isLoading){
 
 }
 
-const MovieList = ({movie, funct}) => {
+const MovieList = ({movie, funct, type}) => {
 
     let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w185' + movie.poster_path : 'default-movie-poster.png';
     const posterStyle = {
@@ -72,10 +75,12 @@ const MovieList = ({movie, funct}) => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
     }
-    
-    const handleClick = (movie) => {funct(movie)}
-    // console.log(movie)
-    
+
+    const handleClick = (movie) => {
+        movie.type = type
+        // console.log(movie)
+        funct(movie)
+    }
     return(
         <div style ={posterStyle} name="choice" onClick = {() => handleClick(movie) }>
         </div>

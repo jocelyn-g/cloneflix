@@ -70,9 +70,8 @@ return(
 const GenreList = ({type,genre,id, handlePresentationChange2}) => {
     
     const setPresentation = (movie) => handlePresentationChange2(movie)
-    
     return(
-        <MoviesList requete={{handlePresentationChange:{setPresentation}, genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
+        <MoviesList requete={{handlePresentationChange:{setPresentation},type:type, genre:genre, requete:'https://api.themoviedb.org/3/discover/'+type+'?api_key=f9ac7a805563a418711063c76bd10794&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='+id+'&with_watch_monetization_types=flatrate'}}/>
 
     )
 }
