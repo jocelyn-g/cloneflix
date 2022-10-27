@@ -36,7 +36,7 @@ if(presentation.length === 0){
                 <p>{presentation && presentation.overview}</p>
                 <ul style={{listStyle: 'none', display:'flex', justifyContent: 'space-evenly'}}>{presentation && presentation.genres.map((genre) => <li key={genre.id}>{genre.name}</li> )}</ul>
             </div>
-            <div style={{position: 'absolute', top: '17vh', right: '2vw'}}><AddFav movie={movieToPresent}/></div>
+            <div style={{position: 'absolute', top: '13vh', right: '2vw'}}><AddFav movie={movieToPresent}/></div>
         </div>
     )
 }
