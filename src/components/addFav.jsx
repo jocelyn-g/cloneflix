@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-
-
 const AddFav = ({movie}) =>{
     const [item , setItem] = useState()
     useEffect(() => {
