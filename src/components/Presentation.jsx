@@ -6,6 +6,7 @@ const Presentation = ({movieToPresent, formatv}) => {
     
     const [presentation, setPresentation] = useState(false);
     const id = movieToPresent.id
+    console.log(movieToPresent)
 useEffect(() => {
     
     const fetchData = async () => {

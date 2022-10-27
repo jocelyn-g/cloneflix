@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Presentation from "../components/Presentation.jsx";
 import SearchMovies from "../components/Search.jsx";
 
-const { Fragment} = React;
-
 const Search = () => {
     const [recupId, setRecupid] = useState({adult: false,
         backdrop_path: "/qxeqKcVBWnQxUp1w6fwWcxZEA6m.jpg",

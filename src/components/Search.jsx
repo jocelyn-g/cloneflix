@@ -1,5 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
-
+import image from "../img/default-movie-poster.png"
 
 const SearchMovies = ({requete}) => {
 
@@ -39,7 +39,6 @@ useEffect( () => {
     const sendToHome = (movie) => {
         requete.handlePresentationChange.setPresentation(movie)
     }
-    console.log(requete.handlePresentationChange.setPresentation)
     return (
         <Fragment>
             <p>
@@ -54,7 +53,7 @@ useEffect( () => {
     
     const Movie = ( { movie, funct, type } ) => {
             
-        let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : 'default-movie-poster.png';
+        let posterUrl = movie.poster_path ? 'https://image.tmdb.org/t/p/w300' + movie.poster_path : image;
         
         const searchMoviesStyle = {
             width: '200px',
@@ -75,7 +74,6 @@ useEffect( () => {
             movie.type = type
             funct(movie)
         }
-        // console.log(movie)
         
         return (
             
